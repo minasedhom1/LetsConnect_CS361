@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/groupList">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.letsconnect_cs361.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.letsconnect_cs361.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/groupList" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupList"
+        android:name="com.example.letsconnect_cs361.GroupList"
+        android:label="@string/groups_fragment"
+        tools:layout="@layout/fragment_group_list_list" >
+        <action
+            android:id="@+id/action_groupList_to_belovedsFragment"
+            app:destination="@id/belovedsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/belovedsFragment"
+        android:name="com.example.letsconnect_cs361.BelovedsFragment"
+        android:label="@string/friends_fragment"
+        tools:layout="@layout/fragment_beloveds_list" >
+        <action
+            android:id="@+id/action_belovedsFragment_to_addNewPersonFragment"
+            app:destination="@id/addNewPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewPersonFragment"
+        android:name="com.example.letsconnect_cs361.AddNewPersonFragment"
+        android:label="@string/add_new_fragment"
+        tools:layout="@layout/fragment_add_new_person" >
+        <action
+            android:id="@+id/action_addNewPersonFragment_to_belovedsFragment"
+            app:destination="@id/belovedsFragment" />
+    </fragment>
+
+
+</navigation>
